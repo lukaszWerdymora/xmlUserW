@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1564081574 source:c:\programlukasz\programy\xmluserw\main.cpp
+1564936875 source:c:\programlukasz\programy\xmluserw\main.cpp
 	<iostream>
 	"Markup.h"
 	"User.h"
 	"UserManager.h"
 	"FileManager.h"
+	"helpMethods.h"
 
 1563998489 c:\programlukasz\programy\xmluserw\markup.h
 	<stdlib.h>
@@ -20,11 +21,12 @@
 	"FileManager.h"
 	<vector>
 
-1563998489 c:\programlukasz\programy\xmluserw\filemanager.h
+1564936957 c:\programlukasz\programy\xmluserw\filemanager.h
 	"User.h"
 	"Markup.h"
+	"helpMethods.h"
 
-1564082114 source:c:\programlukasz\programy\xmluserw\filemanager.cpp
+1565117637 source:c:\programlukasz\programy\xmluserw\filemanager.cpp
 	"FileManager.h"
 
 1563998489 source:c:\programlukasz\programy\xmluserw\markup.cpp
@@ -40,4 +42,12 @@
 
 1564079903 source:c:\programlukasz\programy\xmluserw\usermanager.cpp
 	"UserManager.h"
+
+1564936957 source:c:\programlukasz\programy\xmluserw\helpmethods.cpp
+	"helpMethods.h"
+
+1565117991 c:\programlukasz\programy\xmluserw\helpmethods.h
+	<iostream>
+	<sstream>
+	<algorithm>
 

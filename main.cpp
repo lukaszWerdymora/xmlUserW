@@ -3,6 +3,7 @@
 #include "User.h"
 #include "UserManager.h"
 #include "FileManager.h"
+#include "helpMethods.h"
 //http://www.firstobject.com/dn_markupmethods.htm
 using namespace std;
 
@@ -13,6 +14,7 @@ bool logged (CMarkup xml, string login);
 int main() {
     CMarkup xml;
     User user;
+
     UserManager userManager("xmlUser.xml");
     FileManager fileManager("xmlUser.xml");
 
@@ -35,6 +37,7 @@ int main() {
 
     userManager.registerUser();
     fileManager.returnLastID(xml);
+
 
 
 

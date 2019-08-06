@@ -3,6 +3,7 @@
 
 #include "User.h"
 #include "Markup.h"
+#include "helpMethods.h"
 using namespace std;
 
 class FileManager {

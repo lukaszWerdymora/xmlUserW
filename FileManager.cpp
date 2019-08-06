@@ -31,7 +31,8 @@ void FileManager :: saveUserToFile (User user) {
 }
 int FileManager :: returnLastID (CMarkup &xml){
 
-    string lastID="nie dziala";
+    string lastID="15";
+    int lastId;
     xml.Load(NAME_FILE);
     xml.ResetPos();
     xml.FindElem();
@@ -43,8 +44,10 @@ int FileManager :: returnLastID (CMarkup &xml){
     while (xml.FindElem("UserID")){
         lastID=xml.GetData();
     }
-    cout<<lastID;
+    //int lastId= HelpMethods :: conversionStringToInt (lastID);
+    lastId= HelpMethods :: conversionStringToInt (lastID);
 
+    cout<<lastId;
     return 0;
 }
 
