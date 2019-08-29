@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1566846042 source:e:\program\testsciagnieciarep\main.cpp
+	<iostream>
+	"Markup.h"
+	"User.h"
+	"UserManager.h"
+	"FileManager.h"
+	"helpMethods.h"
+
+1566501881 e:\program\testsciagnieciarep\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1566501881 e:\program\testsciagnieciarep\user.h
+	<iostream>
+
+1566501881 e:\program\testsciagnieciarep\usermanager.h
+	"User.h"
+	"FileManager.h"
+	<vector>
+
+1566501881 e:\program\testsciagnieciarep\filemanager.h
+	"User.h"
+	"Markup.h"
+	"helpMethods.h"
+
+1566501881 e:\program\testsciagnieciarep\helpmethods.h
+	<iostream>
+	<sstream>
+	<algorithm>
+
+1567020229 source:e:\program\testsciagnieciarep\filemanager.cpp
+	"FileManager.h"
+
+1566501881 source:e:\program\testsciagnieciarep\helpmethods.cpp
+	"helpMethods.h"
+
+1566501881 source:e:\program\testsciagnieciarep\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1566501881 source:e:\program\testsciagnieciarep\user.cpp
+	"User.h"
+
+1567020318 source:e:\program\testsciagnieciarep\usermanager.cpp
+	"UserManager.h"
+

@@ -10,10 +10,10 @@ User UserManager :: getDataNewUser (){
     User user;
 
     cout<<"Podaj dane uzytkownika do rejestracji: \n";
-    user.setId (1);
+    user.setId (5);
     user.setLogin("Buzz");
     user.setName ("Maciej");
-    user.setSurname ("Brzoza");
+    user.setSurname ("Brzoza123");
     user.setPassword ("tajne");
 
     return user;

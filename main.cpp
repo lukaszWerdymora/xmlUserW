@@ -36,9 +36,10 @@ int main() {
 
 
     userManager.registerUser();
+    //fileManager.saveUserToFile(user); // to nie bedzie niewidoczne do testow
     fileManager.returnLastID(xml);
 
-
+//void saveUserToFile (User user);
 
 
     return 0;

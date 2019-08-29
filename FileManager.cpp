@@ -9,6 +9,7 @@ void FileManager :: loadFile(CMarkup &xml) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
     }
+
 }
 void FileManager :: saveUserToFile (User user) {
     loadFile (xml);
@@ -31,21 +32,23 @@ void FileManager :: saveUserToFile (User user) {
 }
 int FileManager :: returnLastID (CMarkup &xml){
 
-    string lastID="15";
-    int lastId;
+    string lastID="0";
+
     xml.Load(NAME_FILE);
     xml.ResetPos();
-    xml.FindElem();
-
-
+    xml.FindElem("Users");
     xml.IntoElem();
     xml.FindElem("User");
     xml.IntoElem();
     while (xml.FindElem("UserID")){
         lastID=xml.GetData();
+        xml.OutOfElem();
+        xml.FindElem("User");
+        xml.IntoElem();
+
     }
-    //int lastId= HelpMethods :: conversionStringToInt (lastID);
-    lastId= HelpMethods :: conversionStringToInt (lastID);
+    int lastId= HelpMethods :: conversionStringToInt (lastID);
+
 
     cout<<lastId;
     return 0;
