@@ -30,7 +30,7 @@ void FileManager :: saveUserToFile (User user) {
     //xml.Save(NAME_FILE);
 
 }
-int FileManager :: returnLastID (CMarkup &xml){
+int FileManager :: returnLastID (CMarkup &xml) {
 
     string lastID="0";
 
@@ -40,7 +40,7 @@ int FileManager :: returnLastID (CMarkup &xml){
     xml.IntoElem();
     xml.FindElem("User");
     xml.IntoElem();
-    while (xml.FindElem("UserID")){
+    while (xml.FindElem("UserID")) {
         lastID=xml.GetData();
         xml.OutOfElem();
         xml.FindElem("User");
@@ -52,5 +52,79 @@ int FileManager :: returnLastID (CMarkup &xml){
 
     cout<<lastId;
     return 0;
+}
+vector <User> FileManager :: loadFromFileToVectorAllUsers (CMarkup &xml) {
+    User user;
+    vector <User> users;
+    xml.Load(NAME_FILE);
+    xml.ResetPos();
+
+    xml.FindElem("Users");
+    xml.IntoElem();
+    xml.FindElem("User");
+    xml.IntoElem();
+    if (xml.FindElem("UserID")) {
+        string id="";
+        id=xml.GetData();
+        user.setId(HelpMethods :: conversionStringToInt (id));
+    };
+
+    if (xml.FindElem("Login")) {
+        user.setLogin(xml.GetData());
+    };
+    if (xml.FindElem("Name")) {
+        user.setName(xml.GetData());
+    };
+    if (xml.FindElem("Surname")) {
+        user.setSurname(xml.GetData());
+    };
+    if (xml.FindElem("Password")) {
+        user.setPassword(xml.GetData());
+    };
+
+    users.push_back(user);
+
+    for (int i=0; i<users.size(); i++) {
+
+        cout<<users[i].getId()<<endl;
+        cout<<users[i].getName()<<endl;
+        cout<<users[i].getSurname()<<endl;
+        cout<<users[i].getPassword()<<endl;
+    }
+
+}
+User FileManager :: loadUserFromFile (CMarkup &xml) {
+    User user;
+    xml.Load(NAME_FILE);
+    xml.ResetPos();
+
+    xml.FindElem("Users");
+    xml.IntoElem();
+    xml.FindElem("User");
+    xml.IntoElem();
+    if (xml.FindElem("UserID")) {
+        string id="";
+        id=xml.GetData();
+        user.setId(HelpMethods :: conversionStringToInt (id));
+    };
+
+    if (xml.FindElem("Login")) {
+        user.setLogin(xml.GetData());
+    };
+    if (xml.FindElem("Name")) {
+        user.setName(xml.GetData());
+    };
+    if (xml.FindElem("Surname")) {
+        user.setSurname(xml.GetData());
+    };
+    if (xml.FindElem("Password")) {
+        user.setPassword(xml.GetData());
+    };
+    cout<<user.getId();
+    cout<<user.getLogin();
+    cout<<user.getName();
+    cout<<user.getSurname();
+    cout<<user.getPassword();
+    return user;
 }
 

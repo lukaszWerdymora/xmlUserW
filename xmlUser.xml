@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Users>
 <User>
-<UserID>1961431438</UserID>
-<Login/>
-<Name/>
-<Surname/>
-<Password/>
-</User>
-<User>
 <UserID>1</UserID>
 <Login>Buzz</Login>
 <Name>Maciej</Name>
-<Surname>Brzoza12</Surname>
+<Surname>Brzoza123</Surname>
 <Password>tajne</Password>
 </User>
 <User>
-<UserID>1</UserID>
+<UserID>2</UserID>
 <Login>Buzz</Login>
 <Name>Maciej</Name>
 <Surname>Brzoza123</Surname>
@@ -34,13 +27,6 @@
 <Name>Maciej</Name>
 <Surname>Brzoza123</Surname>
 <Password>tajne</Password>
-</User>
-<User>
-<UserID>1973883278</UserID>
-<Login/>
-<Name/>
-<Surname/>
-<Password/>
 </User>
 <User>
 <UserID>5</UserID>

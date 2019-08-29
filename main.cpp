@@ -35,9 +35,11 @@ int main() {
     //logged (xml, "Login");
 
 
-    userManager.registerUser();
-    //fileManager.saveUserToFile(user); // to nie bedzie niewidoczne do testow
-    fileManager.returnLastID(xml);
+    //userManager.registerUser();
+    //fileManager.saveUserToFile(user); // to niech bedzie niewidoczne do testow
+    //fileManager.returnLastID(xml);
+    //fileManager.loadFromFileToVectorAllUsers (xml); wysypuje sie program
+    fileManager.loadUserFromFile (xml);
 
 //void saveUserToFile (User user);
 

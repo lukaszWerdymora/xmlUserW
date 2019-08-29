@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1566846042 source:e:\program\testsciagnieciarep\main.cpp
+1567108153 source:e:\program\testsciagnieciarep\main.cpp
 	<iostream>
 	"Markup.h"
 	"User.h"
@@ -21,17 +21,18 @@
 	"FileManager.h"
 	<vector>
 
-1566501881 e:\program\testsciagnieciarep\filemanager.h
+1567108190 e:\program\testsciagnieciarep\filemanager.h
 	"User.h"
 	"Markup.h"
 	"helpMethods.h"
+	<vector>
 
 1566501881 e:\program\testsciagnieciarep\helpmethods.h
 	<iostream>
 	<sstream>
 	<algorithm>
 
-1567020229 source:e:\program\testsciagnieciarep\filemanager.cpp
+1567108110 source:e:\program\testsciagnieciarep\filemanager.cpp
 	"FileManager.h"
 
 1566501881 source:e:\program\testsciagnieciarep\helpmethods.cpp
@@ -48,6 +49,6 @@
 1566501881 source:e:\program\testsciagnieciarep\user.cpp
 	"User.h"
 
-1567020318 source:e:\program\testsciagnieciarep\usermanager.cpp
+1567107152 source:e:\program\testsciagnieciarep\usermanager.cpp
 	"UserManager.h"
 

@@ -4,6 +4,7 @@
 #include "User.h"
 #include "Markup.h"
 #include "helpMethods.h"
+#include <vector>
 using namespace std;
 
 class FileManager {
@@ -13,7 +14,9 @@ class FileManager {
 
 
 public:
+    User loadUserFromFile (CMarkup &xml);//zmien na private
     int returnLastID (CMarkup &xml);//zmien na private
+    vector <User> loadFromFileToVectorAllUsers (CMarkup &xml);
     void loadFile(CMarkup &xml);
     FileManager (string fileName) : NAME_FILE (fileName){};
     void loadUsersFromFile (CMarkup xml);
