@@ -35,4 +35,18 @@
 <Surname>Brzoza123</Surname>
 <Password>tajne</Password>
 </User>
+<User>
+<UserID>7</UserID>
+<Login>Jacek</Login>
+<Name>Maciej</Name>
+<Surname>Brzoza123</Surname>
+<Password>tajne to jest 6</Password>
+</User>
+<User>
+<UserID>8</UserID>
+<Login>Lukasz</Login>
+<Name>Maciej</Name>
+<Surname>Brzoza123</Surname>
+<Password>tajne</Password>
+</User>
 </Users>

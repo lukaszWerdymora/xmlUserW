@@ -1,17 +1,20 @@
 #include "FileManager.h"
 
 
-void FileManager :: loadFile(CMarkup &xml) {
+void FileManager :: loadFile(CMarkup &xml)
+{
     bool ifFileExist=xml.Load (NAME_FILE);
     //cout<<"czy utworzono plik "<<ifFileExist<<endl;
-    if (!ifFileExist) {
+    if (!ifFileExist)
+    {
 
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
     }
 
 }
-void FileManager :: saveUserToFile (User user) {
+void FileManager :: saveUserToFile (User user)
+{
     loadFile (xml);
 
     xml.FindElem();
@@ -27,10 +30,11 @@ void FileManager :: saveUserToFile (User user) {
     string document=xml.GetDoc();
     //cout<<document;
 
-    //xml.Save(NAME_FILE);
+    xml.Save(NAME_FILE);
 
 }
-int FileManager :: returnLastID (CMarkup &xml) {
+int FileManager :: returnLastID ()// zwrot Id oststniego uzytkownika ma sie odbywac po vector
+{
 
     string lastID="0";
 
@@ -40,7 +44,8 @@ int FileManager :: returnLastID (CMarkup &xml) {
     xml.IntoElem();
     xml.FindElem("User");
     xml.IntoElem();
-    while (xml.FindElem("UserID")) {
+    while (xml.FindElem("UserID"))
+    {
         lastID=xml.GetData();
         xml.OutOfElem();
         xml.FindElem("User");
@@ -49,82 +54,62 @@ int FileManager :: returnLastID (CMarkup &xml) {
     }
     int lastId= HelpMethods :: conversionStringToInt (lastID);
 
-
-    cout<<lastId;
     return 0;
 }
-vector <User> FileManager :: loadFromFileToVectorAllUsers (CMarkup &xml) {
-    User user;
+vector <User> FileManager :: loadAllUsersFromFileToVector ()
+{
+
     vector <User> users;
+    //loadUserFromFile( xml);
     xml.Load(NAME_FILE);
     xml.ResetPos();
 
     xml.FindElem("Users");
     xml.IntoElem();
-    xml.FindElem("User");
-    xml.IntoElem();
-    if (xml.FindElem("UserID")) {
-        string id="";
-        id=xml.GetData();
-        user.setId(HelpMethods :: conversionStringToInt (id));
-    };
+    //xml.FindElem("User");
+    //xml.IntoElem();
+    while (xml.FindElem("User"))
+    {
+        xml.IntoElem();
+        users.push_back(loadUserFromFile( xml));
+        xml.OutOfElem();
+        //xml.FindElem("User");
+        //xml.IntoElem();
 
-    if (xml.FindElem("Login")) {
-        user.setLogin(xml.GetData());
-    };
-    if (xml.FindElem("Name")) {
-        user.setName(xml.GetData());
-    };
-    if (xml.FindElem("Surname")) {
-        user.setSurname(xml.GetData());
-    };
-    if (xml.FindElem("Password")) {
-        user.setPassword(xml.GetData());
-    };
-
-    users.push_back(user);
-
-    for (int i=0; i<users.size(); i++) {
-
-        cout<<users[i].getId()<<endl;
-        cout<<users[i].getName()<<endl;
-        cout<<users[i].getSurname()<<endl;
-        cout<<users[i].getPassword()<<endl;
     }
 
+    return users;
 }
-User FileManager :: loadUserFromFile (CMarkup &xml) {
-    User user;
-    xml.Load(NAME_FILE);
-    xml.ResetPos();
+User FileManager :: loadUserFromFile (CMarkup &xml)  // przyda sie przy wyszukiwaniu po podanych parametrach
+{
 
-    xml.FindElem("Users");
-    xml.IntoElem();
-    xml.FindElem("User");
-    xml.IntoElem();
-    if (xml.FindElem("UserID")) {
+    User user;
+
+
+    if (xml.FindElem("UserID"))
+    {
         string id="";
         id=xml.GetData();
         user.setId(HelpMethods :: conversionStringToInt (id));
     };
 
-    if (xml.FindElem("Login")) {
+    if (xml.FindElem("Login"))
+    {
         user.setLogin(xml.GetData());
     };
-    if (xml.FindElem("Name")) {
+    if (xml.FindElem("Name"))
+    {
         user.setName(xml.GetData());
     };
-    if (xml.FindElem("Surname")) {
+    if (xml.FindElem("Surname"))
+    {
         user.setSurname(xml.GetData());
     };
-    if (xml.FindElem("Password")) {
+    if (xml.FindElem("Password"))
+    {
         user.setPassword(xml.GetData());
     };
-    cout<<user.getId();
-    cout<<user.getLogin();
-    cout<<user.getName();
-    cout<<user.getSurname();
-    cout<<user.getPassword();
+
     return user;
 }
 

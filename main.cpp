@@ -14,21 +14,10 @@ bool logged (CMarkup xml, string login);
 int main() {
     CMarkup xml;
     User user;
-
-    UserManager userManager("xmlUser.xml");
     FileManager fileManager("xmlUser.xml");
+    UserManager userManager("xmlUser.xml");
 
-/*
-    string nameFileUser="xmlUsers.xml";
-    bool ifFileExist = xml.Load(nameFileUser);
 
-    if (!ifFileExist){
-
-        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
-        xml.AddElem("Users");
-        cout<<"wykonala sie warunek";
-    }
-*/
     //addUserVoid (xml, nameFileUser);
     //addUserVoid (xml, nameFileUser);
     //findUser (xml, "Login");
@@ -37,11 +26,13 @@ int main() {
 
     //userManager.registerUser();
     //fileManager.saveUserToFile(user); // to niech bedzie niewidoczne do testow
-    //fileManager.returnLastID(xml);
-    //fileManager.loadFromFileToVectorAllUsers (xml); wysypuje sie program
-    fileManager.loadUserFromFile (xml);
 
-//void saveUserToFile (User user);
+
+
+    //fileManager.loadFromFileToVectorAllUsers ();
+
+    //userManager.loggingUser();
+    //fileManager.returnLastID();
 
 
     return 0;

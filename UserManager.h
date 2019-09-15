@@ -10,14 +10,21 @@ using namespace std;
 class UserManager {
     vector <User> users;
     FileManager fileManager;
+    int idLoggedUser;
+    int returnLastIdNewUser();
 
 public:
-    UserManager (string fileNameWithUsers) : fileManager (fileNameWithUsers){};
+    UserManager (string fileNameWithUsers) : fileManager (fileNameWithUsers){
+    idLoggedUser=0;
+    users=fileManager.loadAllUsersFromFileToVector();
+    };
     User getDataNewUser();//zmien to pozniej na private
 
     void addUserToVector();
     void registerUser();
     void wyswietl ();
+    int loggingUser();
+
 };
 
 #endif // USERMANAGER_H
