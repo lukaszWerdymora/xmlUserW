@@ -33,6 +33,8 @@ int main() {
 
     //userManager.loggingUser();
     //fileManager.returnLastID();
+    userManager.changingPassword();
+    userManager.wyswietl();
 
 
     return 0;

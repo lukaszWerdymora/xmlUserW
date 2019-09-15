@@ -11,7 +11,7 @@ class UserManager {
     vector <User> users;
     FileManager fileManager;
     int idLoggedUser;
-    int returnLastIdNewUser();
+    int returnIdNewUser();
 
 public:
     UserManager (string fileNameWithUsers) : fileManager (fileNameWithUsers){
@@ -24,6 +24,10 @@ public:
     void registerUser();
     void wyswietl ();
     int loggingUser();
+    void loggedOut();
+    bool ifAnyUserIsLogg();
+    void changingPassword();
+
 
 };
 
