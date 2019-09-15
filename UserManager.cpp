@@ -33,6 +33,7 @@ void UserManager :: wyswietl ()
     {
 
         cout<<users[i].getId()<<endl;
+        cout<<users[i].getLogin()<<endl;
         cout<<users[i].getName()<<endl;
         cout<<users[i].getSurname()<<endl;
         cout<<users[i].getPassword()<<endl;
@@ -79,7 +80,7 @@ int UserManager :: loggingUser()
 return 0;
 }
 
-int UserManager :: returnLastIdNewUser(){
+int UserManager :: returnIdNewUser(){
     int id=0;
     if (users.empty()==true){
         id=1;
@@ -88,4 +89,35 @@ int UserManager :: returnLastIdNewUser(){
     }
     cout<<id;
     return id;
+}
+void UserManager :: loggedOut(){
+    idLoggedUser=0;
+}
+
+bool UserManager :: ifAnyUserIsLogg(){
+    if (idLoggedUser > 0){
+        return true;
+    }else {
+        return false;
+    }
+
+}
+void UserManager :: changingPassword(){
+    cin.clear();
+    cin.ignore (1000,'\n');
+
+    cout<<"\nPodaj nowe haslo\n";
+    string newPassword="";
+    cin>>newPassword;
+
+    if (ifAnyUserIsLogg()){
+        for (vector <User>::iterator itr=users.begin(); itr !=users.end(); itr++){
+            if (itr -> User::getId()==idLoggedUser){
+                itr -> User :: setPassword (newPassword);
+            }
+        }
+    } else {
+        cout<<"Nie jestes zalogowany";
+    }
+
 }
